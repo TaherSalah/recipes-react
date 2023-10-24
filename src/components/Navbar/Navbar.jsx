@@ -13,8 +13,11 @@ export default class Navbar extends Component {
             </button>
             <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
               <div className="navbar-nav ms-auto mx-5">
-                <Link className="nav-link active" aria-current="page" to="/">Home</Link>
-                <Link className="nav-link" aria-current="page" to="about">About</Link>
+                <Link className="nav-link active" aria-current="page" to="/">All Recips</Link>
+                <Link className="nav-link" aria-current="page" to="about">All News</Link>
+                <Link className="nav-link" aria-current="page" to="sport">sports News</Link>
+                <Link className="nav-link" aria-current="page" to="business">business News</Link>
+                <Link className="nav-link" aria-current="page" to="headlines">headlines  News</Link>
               </div>
             </div>
           </div>
