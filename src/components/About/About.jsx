@@ -2,7 +2,6 @@
 // import React, { Component } from 'react'
 // import imageNotFound from '../../images/404-not-found.jpg'
 // import { Link } from 'react-router-dom'
-// import style from './About.module.css'
 
 // import {allNews} from '../../services/constance'
 
@@ -56,29 +55,41 @@
 //   }
 // }
 import axios from 'axios'
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
+import style from './About.module.css'
 
 export default function About() {
-
-  useEffect(()=>{
+  const [products, setProducts] = useState([]);
+  useEffect(() => {
     getPizzaData()
-  });
+  }, []);
 
-  const getPizzaData=async()=>{
+  const getPizzaData = async () => {
 
-    let {data} =await axios.get('https://forkify-api.herokuapp.com/api/search?q=broccoli');
-
-    console.log(data.recipes)
+    let { data } = await axios.get('https://fakestoreapi.com/products');
+    setProducts(data);
 
 
   }
 
+  console.log(products);
 
 
   return (
-    
+
     <div>
-      
+      <div className="row">
+        {
+          products.map((product) =>
+
+            <div key={product.id} className="col-md-4">
+              <div className="prod text-center">
+                <img className={`${style.imageH} w-50`} src={product.image} alt="" />
+                <h6>{product.category}</h6>
+              </div>
+            </div>
+          )}
+      </div>
     </div>
   )
 }

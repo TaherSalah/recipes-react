@@ -24,7 +24,7 @@ export default class Home extends Component {
                     {this.state.recipes.length > 0 ? <div className="row">
                         {this.state.recipes.map((recipe,index) =>
 
-                            <div key={index} className='col-md-4'>
+                            <div key={index} className='col-4'>
                                 <div className="data text-center my-2">
                                     <img src={recipe.image_url} className={`${style.imgHeight} w-100`} alt="" srcset="" />
                                     <h6>{recipe.title}</h6>
