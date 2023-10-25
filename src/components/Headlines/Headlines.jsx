@@ -25,8 +25,8 @@ export default class Headlines extends Component {
                 <h1 className="bg-warning p-2 text-center ">headlinesNews</h1>
                 <div className="container">
                     <div className="row">
-                        {this.state.headlinesNews.map((headlineNews) =>
-                            <div className="col-md-4">
+                        {this.state.headlinesNews.map((headlineNews,index) =>
+                            <div key={index} className="col-md-4">
 
                                 <Link to={headlineNews.url} target='_blank'>
                                     {headlineNews.urlToImage !== null ? <img className='w-100 h-75 ' src={headlineNews.urlToImage} alt="" srcset="" /> : <img className='w-100 h-75' src={imageNotFound} alt="" srcset="" />}

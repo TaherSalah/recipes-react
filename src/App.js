@@ -5,11 +5,12 @@ import Headlines from "./components/Headlines/Headlines";
 import Sport from "./components/Sport/Sport";
 import About from "./components/About/About";
 import Footer from "./components/Footer/Footer";
+import UserId from "./components/UserId";
 
 function App() {
   return ( 
   <>
-
+<UserId/>
  <Navbar/> 
 <Routes>
   <Route path='/' element={<Home/>}></Route>
